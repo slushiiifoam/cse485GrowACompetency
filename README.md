@@ -25,11 +25,11 @@ Open `http://localhost:5173`.
 ## API routes
 
 ```text
-GET    /api/v1/plants
-GET    /api/v1/plants/:slug
-POST   /api/v1/plants
-PATCH  /api/v1/plants/:slug
-DELETE /api/v1/plants/:slug
+GET    /api/v1/plants        - Loads all plant cards on the main page
+GET    /api/v1/plants/:slug  - Loads one plant on the detail page
+POST   /api/v1/plants        - Adds a plant from the Add Plant form
+PATCH  /api/v1/plants/:slug  - Updates a plant with the Edit button
+DELETE /api/v1/plants/:slug  - Removes a plant with the Delete button
 ```
 
 Added, edited, and deleted plants reset when the server restarts.
