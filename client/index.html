@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="A simple guide to seven plants from the original Plants vs. Zombies game." />
+    <title>Lawn Almanac</title>
+
+    <!-- Pico CSS supplies clean default styles without a frontend framework. -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+
+    <!-- defer waits for the HTML to load before running these scripts. -->
+    <script defer src="/scripts/header.js"></script>
+    <script defer src="/scripts/plants.js"></script>
+  </head>
+  <body>
+    <header id="site-header"></header>
+
+    <main class="container">
+      <section class="intro">
+        <p class="eyebrow">Plants vs. Zombies</p>
+        <h1>Choose your lawn defender</h1>
+        <p>Meet useful plants, compare their sun costs, and manage the almanac through a REST API.</p>
+      </section>
+
+      <section class="plant-form-section" aria-labelledby="add-plant-title">
+        <details>
+          <summary id="add-plant-title" role="button">Add a plant</summary>
+          <form id="plant-form">
+            <div class="form-grid">
+              <label>
+                Name
+                <input id="plant-name" name="name" required />
+              </label>
+              <label>
+                URL slug
+                <input id="plant-slug" name="slug" placeholder="example-plant" required />
+              </label>
+              <label>
+                Sun cost
+                <input id="plant-cost" name="sunCost" type="number" min="0" required />
+              </label>
+              <label>
+                Role
+                <select id="plant-role" name="role" required>
+                  <option value="attack">Attack</option>
+                  <option value="support">Support</option>
+                  <option value="defense">Defense</option>
+                  <option value="instant">Instant use</option>
+                </select>
+              </label>
+            </div>
+            <label>
+              Image URL
+              <input id="plant-image" name="imageUrl" type="url" placeholder="Optional" />
+            </label>
+            <label>
+              Description
+              <textarea id="plant-description" name="description" required></textarea>
+            </label>
+            <button type="submit">Save plant</button>
+          </form>
+        </details>
+        <p id="plant-message" class="plant-message" aria-live="polite"></p>
+      </section>
+
+      <!-- plants.js creates and inserts the plant cards into this section. -->
+      <section id="plant-list" class="plant-grid" aria-live="polite"></section>
+    </main>
+  </body>
+</html>
+

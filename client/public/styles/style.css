@@ -1,0 +1,169 @@
+/* Small custom layer on top of Pico CSS for the plant theme and card grid. */
+:root {
+  --pico-primary: #357a38;
+  --pico-primary-hover: #28612b;
+  --pico-primary-focus: rgba(53, 122, 56, 0.2);
+  --pico-border-radius: 0.75rem;
+}
+
+body {
+  background: #f4f8ed;
+}
+
+#site-header {
+  background: #e3efcf;
+  border-bottom: 1px solid #c6d9aa;
+  margin-bottom: 2rem;
+}
+
+#site-header nav {
+  padding-block: 0.75rem;
+}
+
+.brand {
+  color: #234e26;
+  font-size: 1.15rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.intro {
+  margin-bottom: 2rem;
+  max-width: 48rem;
+}
+
+.plant-form-section {
+  margin-bottom: 2rem;
+}
+
+.plant-form-section details {
+  background: white;
+  border: 1px solid #c6d9aa;
+  border-radius: var(--pico-border-radius);
+  padding: 1rem;
+}
+
+.plant-form-section summary {
+  margin-bottom: 0;
+  width: fit-content;
+}
+
+.plant-form-section details[open] summary {
+  margin-bottom: 1.25rem;
+}
+
+.form-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.plant-message {
+  color: #234e26;
+  min-height: 1.5rem;
+}
+
+.error-message {
+  color: #a3261f;
+}
+
+.eyebrow {
+  color: #5d762e;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.plant-grid {
+  display: grid;
+  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.plant-card {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  overflow: hidden;
+}
+
+.plant-card > img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  width: 100%;
+}
+
+.plant-card h2 {
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.plant-card > p {
+  flex: 1;
+}
+
+.plant-card footer {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: space-between;
+}
+
+.plant-card footer a,
+.plant-card footer button {
+  margin: 0;
+  padding: 0.55rem 0.8rem;
+}
+
+.plant-detail {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+}
+
+.detail-image-wrap img {
+  border-radius: var(--pico-border-radius);
+  width: 100%;
+}
+
+.sun-cost {
+  background: #fff2b8;
+  border-radius: var(--pico-border-radius);
+  display: inline-block;
+  padding: 0.65rem 0.85rem;
+}
+
+.not-found {
+  max-width: 42rem;
+  padding-top: 15vh;
+  text-align: center;
+}
+
+.error-code {
+  color: #5d762e;
+  font-size: clamp(4rem, 12vw, 8rem);
+  font-weight: 700;
+  line-height: 1;
+  margin: 0;
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .plant-card footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+

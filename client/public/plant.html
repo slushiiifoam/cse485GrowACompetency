@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plant Details | Lawn Almanac</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+
+    <script defer src="/scripts/header.js"></script>
+    <script defer src="/scripts/plant.js"></script>
+  </head>
+  <body>
+    <header id="site-header"></header>
+
+    <!-- plant.js fills these empty elements with the selected plant's data. -->
+    <main id="plant-detail" class="container plant-detail" aria-live="polite">
+      <div class="detail-image-wrap">
+        <img id="image" src="" alt="" />
+      </div>
+
+      <article>
+        <p class="eyebrow">Plant profile</p>
+        <h1 id="name"></h1>
+        <p id="description"></p>
+        <p class="sun-cost"><strong>Sun cost:</strong> <span id="sunCost"></span></p>
+        <p><strong>Role:</strong> <span id="role"></span></p>
+        <a href="/" role="button" class="secondary">← Back to all plants</a>
+      </article>
+    </main>
+  </body>
+</html>
+
